@@ -10,6 +10,9 @@ db-migrate:
 db-rollback:
 	docker-compose exec web bash -l -c "bundle exec rails db:rollback"
 
+console:
+	docker-compose exec web bash -l -c "bundle exec rails console"
+
 test:
 	docker-compose exec web bash -l -c "bundle exec rake"
 

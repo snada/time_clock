@@ -1,8 +1,8 @@
 module Types
   class QueryType < GraphQL::Schema::Object
-    field :test_field, String, null: false, description: 'An example field added by the generator'
-    def test_field
-      'Hello World!'
+    field :me, Types::UserType, null: true, description: 'Currently logged in user'
+    def me
+      context[:current_user]
     end
   end
 end
