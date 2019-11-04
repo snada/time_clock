@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   enum level: [:base, :admin]
 
+  has_many :events, dependent: :destroy
+
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :level, presence: true
   validates :password, confirmation: { if: :require_password? },
