@@ -32,7 +32,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    User.create(username: 'admin', password: 'password', password_confirmation: 'password', role: :admin)
+    User.create(username: 'admin', password: 'password', password_confirmation: 'password', level: :admin)
   end
 
   def down
