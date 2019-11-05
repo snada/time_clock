@@ -10,7 +10,7 @@ import moment from 'moment';
 import { useMutation } from '@apollo/react-hooks';
 import CREATE from './mutations/createEventMutation';
 
-const defaultInfo = { username: '', password: '' };
+const defaultInfo = { username: '', comment: '', password: '' };
 
 export default props => {
   const [info, setInfo] = useState(defaultInfo);
@@ -65,6 +65,14 @@ export default props => {
               </Form.Group>
             ) : null
           }
+          <Form.Group>
+            <Form.Label>Comment</Form.Label>
+            <Form.Control
+              placeholder="Enter comment (optional)"
+              value={info.comment}
+              onChange={(e) => setInfo({ ...info, comment: e.target.value })}
+            />
+          </Form.Group>
           <Button variant="primary" type="submit" onClick={(e) => {
             e.preventDefault();
             createMutation({ variables: { ...info, kind: props.kind } }).then(
