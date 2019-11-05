@@ -11,3 +11,9 @@ namespace :yarn do
     puts 'Skipping'
   end
 end
+
+namespace :webpacker do
+  task :install do
+    puts 'Skipping'
+  end
+end
