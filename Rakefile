@@ -4,3 +4,9 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+namespace :yarn do
+  task :install do
+    puts 'Skipping'
+  end
+end
