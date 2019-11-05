@@ -47,6 +47,12 @@ set :keep_releases, 3
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
+namespace :yarn do
+  task :install do
+    execute :yarn, 'install'
+  end
+end
+
 namespace :deploy do
   before :compile_assets, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
