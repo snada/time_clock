@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  def index
+    render component: 'App', prerender: false
+  end
+
   protected  
     def current_user_session
       @current_user_session ||= UserSession.find
